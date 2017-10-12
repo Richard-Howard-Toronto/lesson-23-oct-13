@@ -7,33 +7,49 @@ def find_leap_years(start_year, end_year)
     new_array = []
     second_array = []
 
+    p "array_years is #{array_years}"
+
     array_years.each do |i|
 
-      if  i % 4 == 0
-        "i is #{i}"
-        new_array.push i
-      else
-         "not divisible"
-      end
+        if  i % 4 == 0
+          new_array.push i
+        else
+          false
+        end
 
+      puts "new_array is #{new_array}"
 
+      second_array = []
       new_array.each do |j|
-
-        p new_array
-
-        if j % 100 == 0
-          "j is divisible by 100 and not divisible by 400, which is the year: #{j}"
+        if j % 1 == 0
           second_array.push j
         else
-           "year #{j} is not: (a) divisible by 100 and (b) not divisible by 400"
+          false
+        end
+
+        puts "second array is: #{second_array}"
+
+      third_array = []
+      second_array.each do |k|
+        if k % 1 == 0
+          third_array.push k
+        else
+          false
         end
 
       end
+
+
+      puts "third array is: #{third_array}"
+
+      end
+
+
     end
-    p second_array
+
 end
 
-find_leap_years(2000,2012)
+find_leap_years(1990,2012)
 
 
 # find_leap_years(2000, 2012) # should return: [2000, 2004, 2008, 2012]
