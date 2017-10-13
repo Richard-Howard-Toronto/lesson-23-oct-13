@@ -2,24 +2,44 @@
 
 def to_sentence()
 
-  word_array = []
+a = %w{cow chicken sheep}
 
-  a = %w{cow chicken sheep}
+  word_array = []
+  word_string = ()
+
   last = a.last
-  last.prepend(' and ')
+  p last.prepend(' and ')
+  p a[-2].prepend(' ')
+
 
   a.each do |word|
     word_array << word
   end
 
-    p word_array.flatten
+    # new_word_array = new_word_array.gsub /"/, '|'
+    # new_word_array.tr(%q{"'}, '|')
+    # a = eval word_array
+
+    p word_array.class
+
+     word_string = word_array.map { |i| + i.to_s}.join (',')
+
+    p word_string.class
+
+    puts "input is #{a}"
+
+    puts "output is #{word_string}"
 
 end
 
-to_sentence()
+to_sentence
 
 
-#
+
+
+
+
+
 # str = "This is a string"
 # p %w{this is a string}
 # p str.split(' ').size
